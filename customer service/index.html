@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Insurance Customer Portal</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#file-claim">File a Claim</a></li>
+          <li><a href="#track-claims">Track Claims</a></li>
+          <li><a href="#chatbot">Chatbot</a></li>
+        </ul>
+      </nav>
+      <h1>Insurance Customer Portal</h1>
+    </header>
+    <main>
+      <section id="file-claim">
+        <h2>File a Claim</h2>
+        <form id="claim-form">
+          <input
+            type="text"
+            id="policy-number"
+            placeholder="Policy Number"
+            required
+          />
+          <input type="date" id="incident-date" required />
+          <textarea
+            id="incident-description"
+            placeholder="Description of Incident"
+            required
+          ></textarea>
+          <input type="file" id="document-upload" />
+          <button type="submit">Submit Claim</button>
+          <div id="form-feedback"></div>
+        </form>
+      </section>
+      <section id="track-claims">
+        <h2>Track Your Claims</h2>
+        <input type="text" id="search-claims" placeholder="Search Claim ID" />
+        <table id="claims-table">
+          <thead>
+            <tr>
+              <th>Claim ID</th>
+              <th>Policy Number</th>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+      <section id="chatbot">
+        <h2>Chat with Us</h2>
+        <div id="chat-window"></div>
+        <input
+          type="text"
+          id="user-input"
+          placeholder="Type your message here..."
+        />
+        <button id="send-message">Send</button>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
