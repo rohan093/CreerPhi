@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coldplay Concert Booking</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Coldplay Concert Booking</h1>
+      <form id="bookingForm">
+        <label for="concert">Select a Concert Date and Venue:</label>
+        <select id="concert" required>
+          <option value="">--Select Concert--</option>
+          <option value="October 15, 2024 - London">
+            October 15, 2024 - London
+          </option>
+          <option value="November 10, 2024 - New York">
+            November 10, 2024 - New York
+          </option>
+          <option value="December 5, 2024 - Sydney">
+            December 5, 2024 - Sydney
+          </option>
+        </select>
+
+        <label for="ticketType">Select Ticket Type:</label>
+        <select id="ticketType" required>
+          <option value="">--Select Ticket Type--</option>
+          <option value="General Admission">$80 - General Admission</option>
+          <option value="VIP">$150 - VIP</option>
+        </select>
+
+        <label for="ticketQuantity">Select Ticket Quantity:</label>
+        <input type="number" id="ticketQuantity" min="1" required />
+
+        <button type="submit">Confirm Booking</button>
+      </form>
+      <div id="confirmationMessage" class="hidden"></div>
+    </div>
+
+    <script>
+      document
+        .getElementById("bookingForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          const concert = document.getElementById("concert").value;
+          const ticketType = document.getElementById("ticketType").value;
+          const ticketQuantity =
+            document.getElementById("ticketQuantity").value;
+
+          // Save booking details to local storage
+          const bookingDetails = {
+            concert: concert,
+            ticketType: ticketType,
+            ticketQuantity: ticketQuantity,
+          };
+          localStorage.setItem(
+            "bookingDetails",
+            JSON.stringify(bookingDetails)
+          );
+
+          // Redirect to summary page
+          window.location.href = "booking.html";
+        });
+    </script>
+  </body>
+</html>

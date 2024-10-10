@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Summary</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Booking Summary</h1>
+      <div id="summary"></div>
+      <button id="goBack">Go Back to Booking</button>
+    </div>
+
+    <script>
+      // Retrieve booking details from local storage
+      const bookingDetails = JSON.parse(localStorage.getItem("bookingDetails"));
+
+      if (bookingDetails) {
+        const summaryDiv = document.getElementById("summary");
+        summaryDiv.innerHTML = `
+                <p><strong>Concert:</strong> ${bookingDetails.concert}</p>
+                <p><strong>Ticket Type:</strong> ${bookingDetails.ticketType}</p>
+                <p><strong>Ticket Quantity:</strong> ${bookingDetails.ticketQuantity}</p>
+            `;
+      } else {
+        document.getElementById("summary").innerHTML =
+          "<p>No booking details found.</p>";
+      }
+
+      // Go back to booking page
+      document.getElementById("goBack").addEventListener("click", function () {
+        window.location.href = "index.html";
+      });
+    </script>
+  </body>
+</html>

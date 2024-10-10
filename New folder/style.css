@@ -1,0 +1,93 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-image: url("coldplay.jpg");
+
+  background-position: center;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  font-family: "Arial", sans-serif;
+  max-width: 500px;
+  margin: 0 auto;
+  background: #ffffff;
+  /* background-image: url("copy.jpg"); */
+  /* background-position: center; Center the image */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+label {
+  margin-top: 15px;
+  font-weight: bold;
+  display: block;
+  text-align: left;
+  color: #555;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s;
+}
+
+select:focus,
+input:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+.hidden {
+  display: none;
+}
+
+#summary {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+#summary p {
+  margin: 10px 0;
+  color: #555;
+}
+
+#goBack {
+  background-color: #f44336; /* Red */
+  margin-top: 20px;
+}
+
+#goBack:hover {
+  background-color: #d32f2f;
+}

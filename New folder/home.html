@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Coldplay</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- place navbar here -->
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img
+              src="1.png"
+              alt="Logo"
+              width="200"
+              height="24"
+              class="d-inline-block align-text-top"
+            />
+          </a>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Booking</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Gallary</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <h1>Coldplay Concert Booking</h1>
+        <form id="bookingForm">
+          <label for="concert">Select a Concert Date and Venue:</label>
+          <select id="concert" required>
+            <option value="">--Select Concert--</option>
+            <option value="October 15, 2024 - London">
+              October 15, 2024 - London
+            </option>
+            <option value="November 10, 2024 - New York">
+              November 10, 2024 - New York
+            </option>
+            <option value="December 5, 2024 - Sydney">
+              December 5, 2024 - Sydney
+            </option>
+          </select>
+
+          <label for="ticketType">Select Ticket Type:</label>
+          <select id="ticketType" required>
+            <option value="">--Select Ticket Type--</option>
+            <option value="General Admission">$80 - General Admission</option>
+            <option value="VIP">$150 - VIP</option>
+          </select>
+
+          <label for="ticketQuantity">Select Ticket Quantity:</label>
+          <input type="number" id="ticketQuantity" min="1" required />
+
+          <button type="submit">Confirm Booking</button>
+        </form>
+        <div id="confirmationMessage" class="hidden"></div>
+      </div>
+
+      <script>
+        document
+          .getElementById("bookingForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const concert = document.getElementById("concert").value;
+            const ticketType = document.getElementById("ticketType").value;
+            const ticketQuantity =
+              document.getElementById("ticketQuantity").value;
+
+            // Save booking details to local storage
+            const bookingDetails = {
+              concert: concert,
+              ticketType: ticketType,
+              ticketQuantity: ticketQuantity,
+            };
+            localStorage.setItem(
+              "bookingDetails",
+              JSON.stringify(bookingDetails)
+            );
+
+            // Redirect to summary page
+            window.location.href = "booking.html";
+          });
+      </script>
+    </main>
+    <footer>
+      <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
